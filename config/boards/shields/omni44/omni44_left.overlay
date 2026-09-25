@@ -19,10 +19,28 @@
     status = "okay";
 };
 
+&joystick_button_split {
+    status = "okay";
+    device = <&joystick_buttons>;
+};
+
+&joystick_button_split_listener {
+    status = "okay";
+};
+
 &joystick_axes {
     status = "okay";
 };
 
 &joystick_axes_listener {
+    status = "okay";
+};
+
+&joystick_axes_split {
+    status = "okay";
+    device = <&joystick_axes>;
+};
+
+&joystick_axes_split_listener {
     status = "okay";
 };

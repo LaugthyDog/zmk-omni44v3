@@ -23,7 +23,15 @@
     input-processors = <&zip_button_behaviors>;
 };
 
+&joystick_button_split_listener {
+    input-processors = <&zip_button_behaviors>;
+};
+
 &joystick_axes_listener {
+    input-processors = <&zip_button_behaviors>;
+};
+
+&joystick_axes_split_listener {
     input-processors = <&zip_button_behaviors>;
 };
 
