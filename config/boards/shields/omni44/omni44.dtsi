@@ -6,6 +6,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <physical_layouts.dtsi>
 
 / {
@@ -36,6 +37,23 @@
                                     RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)
                                     RC(3,7)  RC(3,8)  RC(3,9)  RC(3,10)
         >;
+    };
+
+    joystick_buttons: joystick_buttons {
+        compatible = "gpio-keys";
+        status = "disabled";
+
+        joystick_button: joystick_button {
+            label = "Left joystick button";
+            gpios = <&pro_micro 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+            zephyr,code = <INPUT_BTN_2>;
+        };
+    };
+
+    joystick_button_listener: joystick_button_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&joystick_buttons>;
     };
 
     kscan0: kscan {
