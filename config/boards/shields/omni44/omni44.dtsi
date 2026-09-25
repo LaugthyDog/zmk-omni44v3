@@ -59,7 +59,6 @@
     joystick_axes: joystick_axes {
         compatible = "gpio-keys";
         status = "disabled";
-        polling-mode;
         debounce-interval-ms = <30>;
 
         joystick_y: joystick_y {
