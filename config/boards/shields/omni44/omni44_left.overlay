@@ -18,3 +18,11 @@
 &joystick_button_listener {
     status = "okay";
 };
+
+&joystick_axes {
+    status = "okay";
+};
+
+&joystick_axes_listener {
+    status = "okay";
+};

@@ -56,6 +56,31 @@
         device = <&joystick_buttons>;
     };
 
+    joystick_axes: joystick_axes {
+        compatible = "gpio-keys";
+        status = "disabled";
+        polling-mode;
+        debounce-interval-ms = <30>;
+
+        joystick_y: joystick_y {
+            label = "Left joystick Y axis";
+            gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>;
+            zephyr,code = <INPUT_KEY_0>;
+        };
+
+        joystick_x: joystick_x {
+            label = "Left joystick X axis";
+            gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
+            zephyr,code = <INPUT_KEY_1>;
+        };
+    };
+
+    joystick_axes_listener: joystick_axes_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&joystick_axes>;
+    };
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
