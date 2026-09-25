@@ -1,0 +1,16 @@
+# Copyright (c) 2026 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_OMNI44_LEFT || SHIELD_OMNI44_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
+
+if SHIELD_OMNI44_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
